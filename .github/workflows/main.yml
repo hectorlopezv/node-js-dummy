@@ -3,8 +3,6 @@ run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: 
   push:
     branches: ["workshop2"]
-    paths:
-      - 'package.json'
     paths-ignore:
       - '.github/workflows/**'
   workflow_dispatch:
