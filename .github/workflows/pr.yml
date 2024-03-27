@@ -1,0 +1,18 @@
+name: GitHub Actions Demo Bootcamp CICD pull request
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: pull_request
+
+jobs:
+  Lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '16'
+      - run: npm audit > log_workshop2 || exit 0 
+      - name: PR comment with file
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          filePath: log_workshop2
