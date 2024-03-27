@@ -5,6 +5,8 @@ on:
     branches: ["workshop2"]
     paths:
       - 'package.json'
+    paths-ignore:
+      - '.github/workflows/**'
   workflow_dispatch:
 jobs:
   Lint:
