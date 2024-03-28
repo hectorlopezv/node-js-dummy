@@ -8,4 +8,4 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
-      - run: echo ${{env.DUMMY}}
+      - run: echo $DUMMY
