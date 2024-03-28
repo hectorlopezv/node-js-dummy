@@ -7,7 +7,9 @@ env:
 jobs:
   Lint:
     runs-on: ubuntu-latest
+    env:
+      DUMMY: 3
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
-      - run: echo ${{ vars.DUMMY }}
+      - run: echo "${{ vars.DUMMY }}, ${{ env.DUMMY }}"
